@@ -35,13 +35,13 @@ http.get = function (url, params) {
             //TODO add more config
         }).then(chunck => {
             if (chunck.code == 0) {
-                console.log(chunck.message)
+                window.console.log(chunck.message)
                 reject(chunck.message)
             } else if (chunck.code == 1) {
                 resolve(chunck.data)
             }
         }).catch(err => {
-            console.log(err)
+            window.console.log(err)
             reject("unknown error")
         })
     })
@@ -55,12 +55,12 @@ http.post = function (url, data) {
         }).then(chunck => {
             if (chunck.code == 0) {
                 reject(chunck.message)
-                console.log(chunck.message)
+                window.console.log(chunck.message)
             } else if (chunck.code == 1) {
                 resolve(chunck.data)
             }
         }).catch(err => {
-            console.log(err)
+            window.console.log(err)
             reject("unknown error")
         })
     })
@@ -75,12 +75,12 @@ http.patch = function (url, data) {
         }).then(chunck => {
             if (chunck.code == 0) {
                 reject(chunck.message)
-                console.log(chunck.message)
+                window.console.log(chunck.message)
             } else if (chunck.code == 1) {
                 resolve(chunck.data)
             }
         }).catch(err => {
-            console.log(err)
+            window.console.log(err)
             reject("unknown error")
         })
     })

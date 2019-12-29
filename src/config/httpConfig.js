@@ -3,7 +3,6 @@
  */
 
 import axios from 'axios'
-import store from '@/store/index.js'
 
 //TODO 采用base64给参数编码
 

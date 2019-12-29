@@ -1,6 +1,7 @@
 <template>
   <div>
     <el-card>
+      <el-divider>year{{this.route.params.yearID}}</el-divider>
       <HistogramChart v-bind:recordData="recordData"></HistogramChart>
     </el-card>
   </div>

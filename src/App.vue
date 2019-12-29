@@ -1,26 +1,13 @@
 <template>
   <div id="app">
     <!--img alt="Vue logo" src="./assets/logo.png"-->
-    <HelloWorld msg="Welcome to Your Vue.js App" />
-    <Month/>
-    <PieChart />
-    <HistogramChart />
+    <router-view/>
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
-import Month from "./pages/month.vue";
-import PieChart from "./components/pie-chart.vue";
-import HistogramChart from "./components/hisotgram-chart.vue";
 export default {
   name: "app",
-  components: {
-    HelloWorld,
-    Month,
-    PieChart,
-    HistogramChart
-  }
 };
 </script>
 

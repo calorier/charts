@@ -5,24 +5,24 @@ import Month from "../pages/month"
 export default {
     routes: [
         {
-            path: "/user/:userID/allRecords",
+            path: "/user/:userID/records",
             name: "allRecords",
-            componet: null
+            component: null
         },
         {
             path: "/user/:userID/year/:yearID",
             name: "year",
-            componet: Year
+            component: Year
         },
         {
             path: "/user/:userID/month/:monthID",
             name: "month",
-            componet: Month
+            component: Month
         },
         {
             path: "/user/:userID/daily/:dayID",
             name: "daily",
-            componet: Daily
+            component: Daily
         }
     ]
 }

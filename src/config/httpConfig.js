@@ -8,10 +8,10 @@ import axios from 'axios'
 
 //TODO add store and token
 
-var http = {}
+const http = {}
 
 //TODO set baseURL
-var baseURL = ""
+const baseURL = "http://localhost:3000/calorier/apis/v1/"
 
 //设定全局headers
 var headers = {
@@ -20,27 +20,37 @@ var headers = {
 //TODO 配置拦截器
 
 //create axios instance
-const instance = axios.create({
+var instance = axios.create({
     baseURL: baseURL,
     timeout: 1000,
-    headers: headers
+    headers: headers,
+    validateStatus(status) {
+        switch (status) {
+            case 404:
+                this.$router.push("/404")
+                break
+
+        }
+        return status >= 200 && status < 300
+    }
 });
 
 //GET function
 http.get = function (url, params) {
+    window.console.log(`params is ${params}`)
     return new Promise((resolve, reject) => {
         instance.get(url, {
             params: params,
             //TODO add more config
         }).then(chunck => {
-            if (chunck.code == 0) {
-                window.console.log(chunck.message)
-                reject(chunck.message)
-            } else if (chunck.code == 1) {
-                resolve(chunck.data)
+            if (chunck.data.code == 0) {
+                reject(chunck.data.message)
+            } else if (chunck.data.code == 1) {
+                resolve(chunck.data.data)
             }
         }).catch(err => {
-            window.console.log(err)
+            alert(`========== err ${err}`);
+            //window.console.log(err)
             reject("unknown error")
         })
     })

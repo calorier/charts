@@ -7,14 +7,23 @@
 import Highcharts from "highcharts/highcharts";
 export default {
   name: "AreaChart",
-  props: {
-    recordData: {
-      type: Object,
-      required: true
+  props: ["recordData"],
+  created() {
+    this.getData();
+  },
+  methods: {
+    getData() {
+      this.myTitle = this.recordData.title;
+      this.myRecords = this.recordData.records;
+
+      window.console.log(`son ======title is ${this.myTitle}`);
+      window.console.dir(this.recordData);
     }
   },
   data() {
     return {
+      myTitle: "test",
+      myRecords: [1, 2, 3, 4, 5, 6],
       chartOptions: {
         chart: {
           type: "area"
@@ -79,7 +88,7 @@ export default {
                 ]
               ]
             },
-            data: this.recordData.record
+            data: this.recordData.records
           }
         ]
       },
@@ -100,12 +109,7 @@ export default {
         ]
       }
     };
-  },
-  methods: {
-    callback() {}
-  },
-  created() {},
-  watch: {}
+  }
 };
 </script>
 <style scoped>

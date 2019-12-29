@@ -12,14 +12,41 @@ export default {
       required: true
     }
   },
+  beforeCreate: function() {
+    window.console.log("brefor created =============son");
+  },
+  created: function() {
+    window.console.log("created============son");
+  },
+  mounted: function() {
+    window.console.log(
+      `mounted============son===and the titile is ${this.title}`
+    );
+  },
+  watch: {
+    recordData: {
+      handler() {
+        this.getInfo();
+      }
+    }
+  },
+  methods: {
+    getInfo() {
+      this.title = this.recordData.title;
+      this.records = this.recordData.records;
+      window.console.log(`*************************titile is ${this.title}`);
+    }
+  },
   data() {
     return {
+      title: "hhhhhhhhhhh",
+      records: [1, 2, 3, 4, 5, 6, 7, 8, 10],
       chartOptions: {
         chart: {
           type: "column"
         },
         title: {
-          text: this.recordData.title
+          text: this.title
         },
         xAxis: {
           title: {
@@ -42,7 +69,7 @@ export default {
             }
           }
         },
-        series: this.recordData.records
+        series: this.records
       }
     };
   }

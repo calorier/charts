@@ -13,22 +13,25 @@ export default {
   name: "Year",
   data() {
     return {
-      recordData:{}
+      recordData: {}
     };
   },
   created() {
     this.initYearRecord();
   },
   methods: {
-    initYearRecord(yearID) {
-      var formData = new FormData();
+    initYearRecord() {
+      let formData = new FormData();
+      let userID = this.$route.params.userID;
+      let yearID = this.$route.params.yearID;
       //TODO to change the params
+      formData.append("user", userID);
       formData.append("year", yearID);
       getYearRecord(formData)
         .then(chunck => {
           this.yearData = {
-              "title":`${chunck.year} 的卡路里记录`,
-              "records":chunck.records
+            title: `${chunck.year} 的卡路里记录`,
+            records: chunck.records
           };
         })
         .catch(err => {

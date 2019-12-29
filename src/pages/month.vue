@@ -20,9 +20,12 @@ export default {
     this.initMonthRecord();
   },
   methods: {
-    initMonthRecord(monthID) {
+    initMonthRecord() {
       var formData = new FormData();
       //TODO to change the params
+      let monthID = this.$route.params.monthID;
+      let userID = this.$route.params.userID;
+      formData.append("userID", userID);
       formData.append("month", monthID);
       getMonthRecord(formData)
         .then(chunck => {

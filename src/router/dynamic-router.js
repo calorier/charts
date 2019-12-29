@@ -20,8 +20,8 @@ export default {
             componet: Month
         },
         {
-            path: "/user/:userID/day/:dayID",
-            name: "day",
+            path: "/user/:userID/daily/:dayID",
+            name: "daily",
             componet: Daily
         }
     ]

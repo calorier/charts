@@ -10,7 +10,7 @@ import PieChart from "../components/pie-chart.vue"
 import { Message } from "element-ui";
 import { getDailyRecord } from "../api/data";
 export default {
-  name: "daily",
+  name: "Daily",
   data() {
     return {
       recordData:{}

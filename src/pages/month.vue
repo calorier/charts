@@ -10,7 +10,7 @@ import AreaChart from "../components/area-chart.vue";
 import { Message } from "element-ui";
 import { getMonthRecord } from "../api/data";
 export default {
-  name: "month",
+  name: "Month",
   data() {
     return {
       recordData: {}

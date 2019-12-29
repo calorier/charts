@@ -10,7 +10,7 @@ import HistogramChart from "../components/hisotgram-chart";
 import { Message } from "element-ui";
 import { getYearRecord } from "../api/data";
 export default {
-  name: "year",
+  name: "Year",
   data() {
     return {
       recordData:{}

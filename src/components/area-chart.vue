@@ -30,7 +30,7 @@ export default {
         },
         title: {
           //TODO
-          text: this.recordData.title
+          text: "12月卡路里记录"
         },
         yAxis: {
           title: {
@@ -68,7 +68,7 @@ export default {
         },
         series: [
           {
-            name: "hh",
+            name: "卡路里量",
             color: "lightgreen",
             fillColor: {
               // 设置渐变的填充颜色
@@ -88,7 +88,29 @@ export default {
                 ]
               ]
             },
-            data: this.recordData.records
+            data: [
+              3000,
+              2506,
+              1234,
+              8000,
+              9000,
+              7865,
+              9802,
+              9023,
+              8902,
+              3334,
+              4994,
+              29991,
+              8989,
+              1234,
+              7865,
+              9000,
+              9000,
+              7865,
+              9802,
+              9023,
+              9008
+            ]
           }
         ]
       },

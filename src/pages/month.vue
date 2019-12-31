@@ -1,7 +1,7 @@
 <template>
   <div>
     <el-card>
-      <AreaChart v-bind:recordData="recordData" v-if="flag"></AreaChart>
+      <AreaChart v-bind:recordData="recordData" v-if=true></AreaChart>
     </el-card>
   </div>
 </template>

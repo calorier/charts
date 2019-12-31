@@ -11,7 +11,7 @@ import axios from 'axios'
 const http = {}
 
 //TODO set baseURL
-const baseURL = "http://localhost:3000/calorier/apis/v1/"
+const baseURL = "http://192.68.43.28:3000/calorier/apis/v1/"
 
 //设定全局headers
 var headers = {

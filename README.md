@@ -23,7 +23,7 @@ D:.
 ├─assets #放置png等文件
 │      logo.png
 │
-├─components #图标组件
+├─components #图表组件
 │      area-chart.vue
 │      histogram-chart.vue
 │      pie-chart.vue
